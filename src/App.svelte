@@ -16,6 +16,10 @@ let players = [
 	{
 		name: "Wade Wilson",
 		points: 345678
+	},
+	{
+		name: "Peter Parker",
+		points: 51
 	}
 ];
 
@@ -40,7 +44,10 @@ const addPlayer = e => { //`(e)` takes in event parameter
 			<p>NO PLAYERS!</p>
 		{:else}
 			{#each players as player}
-				<Player name={player.name} points={player.points}/>
+				<Player 
+				name={player.name} 
+				points={player.points}
+				/>
 			{/each}
 		{/if}
 		<!-- <div class="card">
