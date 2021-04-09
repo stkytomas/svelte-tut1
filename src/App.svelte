@@ -2,6 +2,7 @@
 //const { }=require("node:os");
 import Navbar from "./Navbar.svelte";
 import Player from "./Player.svelte";
+import AddPlayer from "./AddPlayer.svelte";
 
 let players = [
 	{
@@ -13,10 +14,15 @@ let players = [
 		points: 101
 	},
 	{
-		name: "Deadpool",
+		name: "Wade Wilson",
 		points: 345678
 	}
 ];
+
+const addPlayer = e => { //`(e)` takes in event parameter
+	const newPlayer = e.detail;
+	players = [...players, newPlayer]; //spreads across current players arr and adds new player
+};
 
 // 	let name = "Tony Stark";
 // 	let points = 100;
@@ -29,6 +35,7 @@ let players = [
 
 <Navbar />
 	<div class="container">
+		<AddPlayer on:addplayer={addPlayer} />
 		{#if players.length === 0}
 			<p>NO PLAYERS!</p>
 		{:else}
