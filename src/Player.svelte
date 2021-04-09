@@ -1,6 +1,6 @@
 <script>
-        let name = "Tony Stark";
-        let points = 100;
+        export let name;
+        export let points;
         let showControls = false;
     
     const addPoint = () => points += 1;
@@ -22,11 +22,10 @@
                     <input type="number" bind:value={points} />
                 {/if}
             </div>
-        </div>	
     
     <style>
         h1 {
-            color: purple;
+            color: rgb(221, 13, 13);
             text-transform: uppercase;
             font-size: 4em;
             font-weight: 100;

@@ -1,18 +1,42 @@
 <script>
 //const { }=require("node:os");
 import Navbar from "./Navbar.svelte";
-	let name = "Tony Stark";
-	let points = 100;
-	let showControls = false;
+import Player from "./Player.svelte";
 
-const addPoint = () => points += 1;
-const removePoint = () => points -= 1;
-const toggleControls = () => (showControls = !showControls);
+let players = [
+	{
+		name: "Tony Stark",
+		points: 53
+	},
+	{
+		name: "Wanda Maximoff",
+		points: 101
+	},
+	{
+		name: "Deadpool",
+		points: 345678
+	}
+];
+
+// 	let name = "Tony Stark";
+// 	let points = 100;
+// 	let showControls = false;
+
+// const addPoint = () => points += 1;
+// const removePoint = () => points -= 1;
+// const toggleControls = () => (showControls = !showControls);
 </script>
 
 <Navbar />
 	<div class="container">
-		<div class="card">
+		{#if players.length === 0}
+			<p>NO PLAYERS!</p>
+		{:else}
+			{#each players as player}
+				<Player name={player.name} points={player.points}/>
+			{/each}
+		{/if}
+		<!-- <div class="card">
 			<h1>
 				{name}
 				<button class="btn btn-sm" on:click={toggleControls}>
@@ -25,10 +49,10 @@ const toggleControls = () => (showControls = !showControls);
 				<button class="btn btn-2" on:click={removePoint}>-1</button>
 				<input type="number" bind:value={points} />
 			{/if}
-		</div>
+		</div> -->
 	</div>	
 
-<style>
+<!-- <style>
 	h1 {
 		color: purple;
 		text-transform: uppercase;
@@ -49,10 +73,4 @@ const toggleControls = () => (showControls = !showControls);
 	.btn-2 {
 		color: red;
 	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+</style> -->
