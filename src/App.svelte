@@ -1,9 +1,11 @@
 <script>
 	let name = "Tony Stark";
+	let points = 100;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>{name}</h1>
+	<h3>{points}</h3>
 </main>
 
 <style>
@@ -19,6 +21,11 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	h3 {
+		color: rgb(13, 197, 13);
+		font-size: 2em;
 	}
 
 	@media (min-width: 640px) {
