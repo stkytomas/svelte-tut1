@@ -1,6 +1,6 @@
 <script>
 //const { }=require("node:os");
-
+import Navbar from "./Navbar.svelte";
 	let name = "Tony Stark";
 	let points = 100;
 	let showControls = false;
@@ -10,7 +10,7 @@ const removePoint = () => points -= 1;
 const toggleControls = () => (showControls = !showControls);
 </script>
 
-<main>
+<Navbar />
 	<div class="container">
 		<div class="card">
 			<h1>
@@ -27,16 +27,8 @@ const toggleControls = () => (showControls = !showControls);
 			{/if}
 		</div>
 	</div>	
-</main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
 	h1 {
 		color: purple;
 		text-transform: uppercase;
