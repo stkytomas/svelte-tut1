@@ -1,11 +1,20 @@
 <script>
 	let name = "Tony Stark";
 	let points = 100;
+
+const addPoint = () => points += 1;
+const removePoint = () => points -= 1;
 </script>
 
 <main>
-	<h1>{name}</h1>
-	<h3>{points}</h3>
+	<div class="container">
+		<div class="card">
+			<h1>{name}</h1>
+			<h3>{points}</h3>
+			<button class="btn" on:click={addPoint}>+1</button>
+			<button class="btn btn-2" on:click={removePoint}>-1</button>
+		</div>
+	</div>	
 </main>
 
 <style>
@@ -24,8 +33,16 @@
 	}
 
 	h3 {
-		color: rgb(13, 197, 13);
+		color: rgb(2, 26, 245);
 		font-size: 2em;
+	}
+
+	.btn {
+		color:rgb(4, 211, 93);
+	}
+
+	.btn-2 {
+		color: red;
 	}
 
 	@media (min-width: 640px) {
